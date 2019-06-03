@@ -4,8 +4,8 @@ import "openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
 
 contract OrigoToken is PausableToken {
 
-    string public constant name = "OrigoToken";
-    string public constant symbol = "Origo";
+    string public constant name = "Origo";
+    string public constant symbol = "OGO";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = (10 ** 9) * (10 ** uint256(decimals));
@@ -13,7 +13,7 @@ contract OrigoToken is PausableToken {
     /**
     * @dev Constructor that gives msg.sender all of existing tokens.
     */
-    function OrigoToken() public {
+    constructor() public {
         totalSupply_ = INITIAL_SUPPLY;
         balances[msg.sender] = INITIAL_SUPPLY;
         Transfer(0x0, msg.sender, INITIAL_SUPPLY);
